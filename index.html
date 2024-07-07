@@ -163,21 +163,19 @@
 
   <script>
     // Your web app's Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyABzkuRfQ94lfFsCzu7r2K0thHWRUysDLk",
-    authDomain: "esp32-greenhouse-d6856.firebaseapp.com",
-    databaseURL: "https://esp32-greenhouse-d6856-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "esp32-greenhouse-d6856",
-    storageBucket: "esp32-greenhouse-d6856.appspot.com",
-    messagingSenderId: "535799325827",
-    appId: "1:535799325827:web:4015f2bafc61400b40e7b6"
-};
-
-    
+    const firebaseConfig = {
+      apiKey: "AIzaSyABzkuRfQ94lfFsCzu7r2K0thHWRUysDLk",
+      authDomain: "esp32-greenhouse-d6856.firebaseapp.com",
+      databaseURL: "https://esp32-greenhouse-d6856-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "esp32-greenhouse-d6856",
+      storageBucket: "esp32-greenhouse-d6856.appspot.com",
+      messagingSenderId: "535799325827",
+      appId: "1:535799325827:web:4015f2bafc61400b40e7b6"
+    };
 
     // Initialize Firebase
     const app = firebase.initializeApp(firebaseConfig);
-    const database = firebase.database(app);
+    const database = firebase.database();
 
     // Function to fetch data from Firebase
     const fetchData = () => {
