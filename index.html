@@ -8,7 +8,7 @@
     body {
       font-family: 'Jura', sans-serif;
       letter-spacing: -1px;
-      margin: 0;
+      margin: 0 0 80px 0;
       padding: 20px;
       background-color: #121212;
       text-align: center;
@@ -20,7 +20,7 @@
     }
     h3 {
       color: #5E5E5E;
-      margin: 0 0 40px 0;
+      margin: 0 0 5px 0;
       font-weight: 300;
       padding: 0;
     }
@@ -101,11 +101,18 @@
     .border-wet {
       border-color: #84C0C6 !important;
     }
+    .timestamp {
+      color: #5E5E5E;
+      margin: 0 0 5px 0;
+      font-weight: 300;
+      padding: 0;
+      font-size: 1.1em;
+    }
   </style>
 </head>
 <body>
   <h1>Greenhouse Monitoring</h1>
-  <h3>Build 3.0.0</h3>
+  <div class="timestamp">Last updated: <span id="lastUpdated">--</span></div>
   <div class="temp-average" id="avgTempBox">
     <h2>Average Temp</h2>
     <div class="reading">
@@ -155,6 +162,7 @@
     </div>
     <div class="status-label" id="bottomHumStatus">--</div>
   </div>
+  <h3>Build 5.0.0</h3>
   <h3>Made by OT - 2024</h3>
 
   <!-- Firebase SDK -->
@@ -185,6 +193,7 @@
         if (snapshot.exists()) {
           const data = snapshot.val();
           updateData(data);
+          updateTimestamp(data.timestamp);
         } else {
           console.log("No data available");
         }
@@ -201,6 +210,11 @@
       const soilTemp = parseFloat(data.soilTemp);
       const topHum = parseFloat(data.topHum);
       const bottomHum = parseFloat(data.bottomHum);
+
+      const updateTimestamp = (timestamp) => {
+       const date = new Date(timestamp);
+       document.getElementById('lastUpdated').textContent = date.toLocaleString();
+      };
 
       const setTempStatus = (elementId, boxId, value) => {
         const statusElement = document.getElementById(elementId);
@@ -262,6 +276,7 @@
       document.getElementById("topHum").innerText = topHum.toFixed(1);
       document.getElementById("bottomHum").innerText = bottomHum.toFixed(1);
     };
+    
 
     // Fetch data when the page loads
     document.addEventListener("DOMContentLoaded", fetchData);
