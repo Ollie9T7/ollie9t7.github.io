@@ -187,7 +187,7 @@
 
     // Function to update timestamp
   const updateTimestamp = (timestamp) => {
-    const date = new Date(timestamp);
+    const date = new Date(timestamp * 1000); // Convert seconds to milliseconds
     document.getElementById('lastUpdated').textContent = date.toLocaleString();
   };
 
