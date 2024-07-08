@@ -185,6 +185,12 @@
     const app = firebase.initializeApp(firebaseConfig);
     const database = firebase.database();
 
+    // Function to update timestamp
+  const updateTimestamp = (timestamp) => {
+    const date = new Date(timestamp);
+    document.getElementById('lastUpdated').textContent = date.toLocaleString();
+  };
+
     // Function to fetch data from Firebase
     const fetchData = () => {
       const dbRef = firebase.database().ref();
