@@ -26,6 +26,12 @@
       font-weight: 300;
       padding: 0;
     }
+    h4 {
+      color: #5e5e5e;
+      margin: 0 0 5px 0;
+      font-weight: 300;
+      padding: 0;
+    }
     .box, .temp-average, .humidity-average {
       background-color: #202020;
       border-radius: 10px;
@@ -122,7 +128,7 @@
 <body>
   <h1>Smarty Plants</h1>
   <div class="timestamp">Last updated: <span id="lastUpdated">--</span></div>
-  <div class="timestamp_next_update">Next update in: <span style="font-weight: 700;">10 minutes</span></div>
+  <div class="timestamp_next_update">Next update in: <span style="font-weight: 700;">5 minutes</span></div>
   <div class="temp-average" id="avgTempBox">
     <h2>Average Temperature</h2>
     <div class="reading">
@@ -172,8 +178,9 @@
     </div>
     <div class="status-label" id="bottomHumStatus">--</div>
   </div>
-  <h3>Build 5.0.0</h3>
+  <h3><span style="font-weight: 500;">Operating Hours: 00:00 - 06:00</span></h3>
   <h3>Made by OT - 2024</h3>
+  <h4>Build 6.0.0</h4>
 
   <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-app-compat.js"></script>
