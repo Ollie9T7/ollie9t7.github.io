@@ -3,10 +3,11 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Greenhouse Monitoring System</title>
-  <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
   <style>
     body {
-      font-family: 'Jura', sans-serif;
+      font-family: 'open sans', sans serif;
       letter-spacing: -1px;
       margin: 10px 0 80px 0;
       padding: 20px;
@@ -17,6 +18,7 @@
       color: #fff;
       margin-bottom: 5px;
       padding: 0;
+      font-weight: 600;
     }
     h3 {
       color: #5E5E5E;
@@ -35,14 +37,14 @@
       border: 2px solid #303030;
     }
     .temp-average, .humidity-average {
-      border-width: 2px;
+      background-color: #292929;
     }
     .box h2, .temp-average h2, .humidity-average h2 {
-      font-size: 1.1em;
+      font-size: 1em;
       margin: 0 0 15px;
       padding: 0 0 10px;
       color: #5E5E5E;
-      font-weight: 700;
+      font-weight: 500;
       border-bottom: 2px solid #303030;
     }
     .reading {
@@ -118,55 +120,55 @@
   </style>
 </head>
 <body>
-  <h1>Smarty Plants Checker</h1>
+  <h1>Smarty Plants</h1>
   <div class="timestamp">Last updated: <span id="lastUpdated">--</span></div>
   <div class="timestamp_next_update">Next update in: <span style="font-weight: 700;">10 minutes</span></div>
   <div class="temp-average" id="avgTempBox">
-    <h2>Average Temp</h2>
+    <h2>Average Temperature</h2>
     <div class="reading">
-      <span class="label">Temp:</span> <span class="value" id="avgTemp" style="font-weight: 700;">--</span> &#8451;
+      <span class="label">Temperature:</span> <span class="value" id="avgTemp" style="font-weight: 600; padding-right: 6px;">--</span> &#8451;
     </div>
     <div class="status-label" id="avgTempStatus">--</div>
   </div>
   <div class="humidity-average" id="avgHumBox">
     <h2>Average Humidity</h2>
     <div class="reading">
-      <span class="label">Humidity:</span> <span class="value" id="avgHum" style="font-weight: 700;">--</span> %
+      <span class="label">Humidity:</span> <span class="value" id="avgHum" style="font-weight: 600; padding-right: 4px;">--</span> %
     </div>
     <div class="status-label" id="avgHumStatus">--</div>
   </div>
   <div class="box" id="topTempBox">
-    <h2>Top Temp</h2>
+    <h2>Top Temperature</h2>
     <div class="reading">
-      <span class="label">Temp:</span> <span class="value" id="topTemp" style="font-weight: 700;">--</span> &#8451;
+      <span class="label">Temperature:</span> <span class="value" id="topTemp" style="font-weight: 600; padding-right: 6px;">--</span> &#8451;
     </div>
     <div class="status-label" id="topTempStatus">--</div>
   </div>
   <div class="box" id="bottomTempBox">
-    <h2>Bottom Temp</h2>
+    <h2>Bottom Temperature</h2>
     <div class="reading">
-      <span class="label">Temp:</span> <span class="value" id="bottomTemp" style="font-weight: 700;">--</span> &#8451;
+      <span class="label">Temperature:</span> <span class="value" id="bottomTemp" style="font-weight: 600; padding-right: 6px;">--</span> &#8451;
     </div>
     <div class="status-label" id="bottomTempStatus">--</div>
   </div>
   <div class="box" id="soilTempBox">
-    <h2>Soil Temp</h2>
+    <h2>Soil Temperature</h2>
     <div class="reading">
-      <span class="label">Temp:</span> <span class="value" id="soilTemp" style="font-weight: 700;">--</span> &#8451;
+      <span class="label">Temperature:</span> <span class="value" id="soilTemp" style="font-weight: 600; padding-right: 6px;">--</span> &#8451;
     </div>
     <div class="status-label" id="soilTempStatus">--</div>
   </div>
   <div class="box" id="topHumBox">
     <h2>Top Humidity</h2>
     <div class="reading">
-      <span class="label">Humidity:</span> <span class="value" id="topHum" style="font-weight: 700;">--</span> %
+      <span class="label">Humidity:</span> <span class="value" id="topHum" style="font-weight: 600; padding-right: 4px;">--</span> %
     </div>
     <div class="status-label" id="topHumStatus">--</div>
   </div>
   <div class="box" id="bottomHumBox">
     <h2>Bottom Humidity</h2>
     <div class="reading">
-      <span class="label">Humidity:</span> <span class="value" id="bottomHum" style="font-weight: 700;">--</span> %
+      <span class="label">Humidity:</span> <span class="value" id="bottomHum" style="font-weight: 600; padding-right: 4px;">--</span> %
     </div>
     <div class="status-label" id="bottomHumStatus">--</div>
   </div>
