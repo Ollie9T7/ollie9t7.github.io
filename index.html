@@ -65,9 +65,11 @@
     .label {
       flex-grow: 1;
       text-align: left;
+      font-size: .9em;
     }
     .value {
       text-align: right;
+      font-size: 1.1em;
     }
     .status-label {
       position: absolute;
@@ -133,55 +135,55 @@
   <div class="temp-average" id="avgTempBox">
     <h2>Average Temperature</h2>
     <div class="reading">
-      <span class="label">Temperature:</span> <span class="value" id="avgTemp" style="font-weight: 600; padding-right: 6px;">--</span> °C
+      <span class="label">Ideal: 16 - 30 °C</span> <span class="value" id="avgTemp" style="font-weight: 600; padding-right: 6px;">--</span> °C
     </div>
     <div class="status-label" id="avgTempStatus">--</div>
   </div>
   <div class="humidity-average" id="avgHumBox">
     <h2>Average Humidity</h2>
     <div class="reading">
-      <span class="label">Humidity:</span> <span class="value" id="avgHum" style="font-weight: 600; padding-right: 4px;">--</span> %
+      <span class="label">Ideal: 60 - 80 %</span> <span class="value" id="avgHum" style="font-weight: 600; padding-right: 4px;">--</span> %
     </div>
     <div class="status-label" id="avgHumStatus">--</div>
   </div>
   <div class="box" id="topTempBox">
     <h2>Top Temperature</h2>
     <div class="reading">
-      <span class="label">Temperature:</span> <span class="value" id="topTemp" style="font-weight: 600; padding-right: 6px;">--</span> °C
+      <span class="label">Ideal: 16 - 30 °C</span> <span class="value" id="topTemp" style="font-weight: 600; padding-right: 6px;">--</span> °C
     </div>
     <div class="status-label" id="topTempStatus">--</div>
   </div>
   <div class="box" id="bottomTempBox">
     <h2>Bottom Temperature</h2>
     <div class="reading">
-      <span class="label">Temperature:</span> <span class="value" id="bottomTemp" style="font-weight: 600; padding-right: 6px;">--</span> °C
+      <span class="label">Ideal: 16 - 30 °C</span> <span class="value" id="bottomTemp" style="font-weight: 600; padding-right: 6px;">--</span> °C
     </div>
     <div class="status-label" id="bottomTempStatus">--</div>
   </div>
   <div class="box" id="soilTempBox">
     <h2>Soil Temperature</h2>
     <div class="reading">
-      <span class="label">Temperature:</span> <span class="value" id="soilTemp" style="font-weight: 600; padding-right: 6px;">--</span> °C
+      <span class="label">Ideal: 16 - 30 °C</span> <span class="value" id="soilTemp" style="font-weight: 600; padding-right: 6px;">--</span> °C
     </div>
     <div class="status-label" id="soilTempStatus">--</div>
   </div>
   <div class="box" id="topHumBox">
     <h2>Top Humidity</h2>
     <div class="reading">
-      <span class="label">Humidity:</span> <span class="value" id="topHum" style="font-weight: 600; padding-right: 4px;">--</span> %
+      <span class="label">Ideal: 60 - 80 %</span> <span class="value" id="topHum" style="font-weight: 600; padding-right: 4px;">--</span> %
     </div>
     <div class="status-label" id="topHumStatus">--</div>
   </div>
   <div class="box" id="bottomHumBox">
     <h2>Bottom Humidity</h2>
     <div class="reading">
-      <span class="label">Humidity:</span> <span class="value" id="bottomHum" style="font-weight: 600; padding-right: 4px;">--</span> %
+      <span class="label">Ideal: 60 - 80 %</span> <span class="value" id="bottomHum" style="font-weight: 600; padding-right: 4px;">--</span> %
     </div>
     <div class="status-label" id="bottomHumStatus">--</div>
   </div>
   <h3><span style="font-weight: 500;">Operating Hours: 06:00 - 00:00</span></h3>
   <h3>Made by OT - 2024</h3>
-  <h4>Build 6.0.0</h4>
+  <h4>Build 6.0.1</h4>
 
   <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-app-compat.js"></script>
@@ -247,7 +249,7 @@
         statusElement.classList.remove("hot", "cold", "normal");
         boxElement.classList.remove("border-hot", "border-cold", "border-normal");
 
-        if (value > 32) {
+        if (value > 30) {
           statusElement.classList.add("hot");
           boxElement.classList.add("border-hot");
           statusElement.innerText = "Too hot";
@@ -258,7 +260,7 @@
         } else {
           statusElement.classList.add("normal");
           boxElement.classList.add("border-normal");
-          statusElement.innerText = "Normal";
+          statusElement.innerText = "Optimum";
         }
       };
 
@@ -269,18 +271,18 @@
         statusElement.classList.remove("wet", "dry", "normal");
         boxElement.classList.remove("border-wet", "border-dry", "border-normal");
 
-        if (value > 86) {
+        if (value > 83) {
           statusElement.classList.add("wet");
           boxElement.classList.add("border-wet");
-          statusElement.innerText = "Too wet";
-        } else if (value < 50) {
+          statusElement.innerText = "Too humid";
+        } else if (value < 60) {
           statusElement.classList.add("dry");
           boxElement.classList.add("border-dry");
           statusElement.innerText = "Too dry";
         } else {
           statusElement.classList.add("normal");
           boxElement.classList.add("border-normal");
-          statusElement.innerText = "Normal";
+          statusElement.innerText = "Optimum";
         }
       };
 
